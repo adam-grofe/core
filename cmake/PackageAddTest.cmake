@@ -12,7 +12,7 @@ macro(PACKAGE_ADD_TEST testname linklibs)
     # create an executable in which the tests will be stored
     add_executable(${testname} ${ARGN})
     # link the Google test infrastructure and a default main function to the test executable.
-    target_link_libraries(${testname} PRIVATE ${linklibs} GTest::gmock GTest::gtest_main
+    target_link_libraries(${testname} PRIVATE ${linklibs} GTest::gmock GTest::gtest_main GTest::gtest GTest::gmock_main
                                               MQT::ProjectOptions MQT::ProjectWarnings)
     # discover tests
     gtest_discover_tests(
